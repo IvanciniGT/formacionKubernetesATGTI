@@ -16,8 +16,8 @@ sudo resize2fs /dev/nvme0n1p1
 sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common -y
 ### CRIO requiere que ciertos módulos de kernel estén activos, necesarios para el manejo de la red virtual de los contenedores.
 sudo su -
-echo "overlay
-br_netfilter" > /etc/modules-load.d/k8s_crio.conf
+echo "overlay" > /etc/modules-load.d/k8s_crio.conf 
+echo "br_netfilter" >> /etc/modules-load.d/k8s_crio.conf
 ### Instalamos CRIO. El primer paso es dar de alta los repositorios de CRIO en Ubuntu para apt.
 ### Definimos las versiones de CRIO y Kubernetes que queremos utilizar.
 export OS=xUbuntu_22.04
